@@ -1623,12 +1623,13 @@ var ajaxChat = {
 				default:
 					text = this.parseCustomInputCommand(text, textParts);
 			}
-			if(text && this.settings['persistFontColor'] && this.settings['fontColor']) {
+			if(text && this.settings['persistFontColor'] && this.settings['fontColor'] && (text.length +8) < this.messageTextMaxLength) {
 				text = this.assignFontColorToCommandMessage(text, textParts);
 			}
 		} else {
 			text = this.parseCustomInputMessage(text);
-			if(text && this.settings['persistFontColor'] && this.settings['fontColor']) {
+			if(text && this.settings['persistFontColor'] && this.settings['fontColor'] && (text.length +8) < this.messageTextMaxLength) {
+				
 				text = this.assignFontColorToMessage(text);
 			}
 		}
@@ -2888,6 +2889,8 @@ var ajaxChat = {
 	// Return replaced text
 	// text contains the whole message
 	replaceCustomText: function(text) {
+		
+
 		return text;
 	},
 	

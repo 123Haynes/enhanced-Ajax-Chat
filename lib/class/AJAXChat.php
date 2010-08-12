@@ -2310,7 +2310,7 @@ class AJAXChat {
 		}
 		
 		if(isset($periodStart))
-			$condition .= ' AND dateTime > \''.date('Y-m-d H:i:s', $periodStart).'\' AND dateTime <= \''.date('Y-m-d H:i:s', $periodEnd).'\'';
+			$condition .= ' AND dateTime >= \''.date('Y-m-d H:i:s', $periodStart).'\' AND dateTime <= \''.date('Y-m-d H:i:s', $periodEnd).'\'';
 		
 		// Check the search condition:
 		if($this->getRequestVar('search')) {
@@ -3337,6 +3337,7 @@ class AJAXChat {
 	// Return replaced text
 	// $text contains the whole message
 	function replaceCustomText(&$text) {
+		$text=str_replace('ass','******',$text);
 		return $text;
 	}
 
