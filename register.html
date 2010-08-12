@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Enhanced AJAX Webchat Registration</title>
+	<script type="text/javascript" src="js/mootools.js"></script>
+	<script type="text/javascript">
+		window.addEvent('domready', function(){
+	                $('registerForm').addEvent('submit', function(e) {
+	                    new Event(e).stop();
+	                    var log = $('log_res').empty().addClass('ajax-loading');
+	                    this.send({
+	                        update: log,
+	                        onComplete: function() {
+	                            log.removeClass('ajax-loading');
+	                        }
+	                    });
+	                });
+	            });
+	</script>
+	<style type="text/css">
+
+		body {
+			font:0.7em Arial, helvetica, sens-serif;
+			color:#567475;
+		}
+		.input {
+			border: 1px solid #99b3b4;
+			width: 220px;
+			background: #e4ebeb;
+			font: 11px verdana, sans-serif;
+			color:#443;
+			padding:3px;
+			margin-bottom:4px;
+			outline:none;
+		}
+		.input:focus {
+			border:1px solid #567475;
+			background: #e4ebeb;
+		}
+		.submit-btn {
+			width: 54px;
+			height: 20px;
+			background: #743 url(./img/submit.gif) no-repeat;
+			outline: none;
+		}
+		.submit-btn:hover {
+			background: #069 url(./img/submit.gif) no-repeat 0 -20px;
+		}
+		div#container {
+			border:1px solid #99b3b4;
+			padding:15px;
+			margin:auto;
+			width:400px;
+		}
+		#log_res {
+			height:auto;
+			padding:15px;
+			margin:100px auto 20px auto;
+			width:400px;
+		}
+		#log_res p {
+			margin:0;
+			padding:4px 0 4px 0;
+		}
+		#log_res.ajax-loading
+			{background: url(./img/spinner.gif) no-repeat center;
+		}
+		.error {
+			color:red;
+			margin:0;
+			padding:0;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div id="log">
+		<div id="log_res">
+		<!-- SPANNER -->
+		</div>
+	</div>
+	<div id="container">
+	<form method="post" id="registerForm" action="register.php">
+          <table align="center" cellpadding="2" cellspacing="0">
+            <tr>
+              <td style="width:120px"><div align="left"><strong><LABEL for="Username">Username:</LABEL></strong></div></td>
+              <td><div align="left">
+                <input name="Username" type="text" class="input" id="Username" value="" size="32" /></div>
+              </td>
+
+            </tr>
+            <tr>
+              <td style="width:120px"><div align="left"><strong><LABEL for="Password">Password:</LABEL></strong></div></td>
+              <td><div align="left">
+              <input name="Password" type="password" class="input" id="Password" value="" size="32" /></div></td>
+            </tr>
+            <tr>
+
+              <td style="width:120px"><div align="left"><strong><LABEL for="re_Password">Re-type Password:</LABEL></strong></div></td>
+
+              <td><div align="left">
+              <input name="re_Password" type="password" class="input" id="re_Password" value="" size="32" /></div></td>
+            </tr>
+
+            <tr>
+              <td colspan="2"><div align="right">
+                  <input type="image" name="register" class="submit-btn" src="./img/btn.gif" alt="submit" title="submit" />
+              </div></td>
+            </tr>
+          </table>
+        </form>
+        </div>
+</body>
+
+</html>
