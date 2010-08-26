@@ -56,11 +56,13 @@ function userNameExists($userName) {
 }
 function addUser($userName,$userPassword) {
 	global $db;
-
+		$id=getLastId()+1;
 		$sql = 'INSERT INTO ajax_chat_users(
+								userID,
 								userName,
 								password)
 				VALUES (
+					'.$id.',
 					'.$db->makeSafe($userName).',
 					'.$db->makeSafe(md5($userPassword)).'
 				);';
@@ -69,5 +71,19 @@ function addUser($userName,$userPassword) {
 		echo $result->getError();
 		die();
 	}
+}
+
+function getLastId()
+{
+	global $db;
+	
+	$sql = 'SELECT userID FROM ajax_chat_users ORDER BY userID DESC LIMIT 1';
+	$result = $db->sqlQuery($sql);
+	if($result->error()) {
+		echo $result->getError();
+		die();
+	}
+	$lastid = $result->fetch();
+	return $lastid['userID'];
 }
 ?>

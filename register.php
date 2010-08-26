@@ -21,7 +21,7 @@ require_once('./lib/registration_functions.php');
 
 	if ($_POST['Password']!=$_POST['re_Password'])
 	{
-		$errors[] = 'Die beiden Passw&ouml;rter stimmen nicht überein.';
+		$errors[] = 'Die beiden Passw&ouml;rter stimmen nicht ï¿½berein.';
 	}
 
 	if(is_array($errors))
@@ -34,6 +34,7 @@ require_once('./lib/registration_functions.php');
 		}
 	}
 	else {
+
 		//add the user to the DB
 		addUser($_POST['Username'],$_POST['Password']);
 		echo '<p><b>Erfolg!</b></p>';
