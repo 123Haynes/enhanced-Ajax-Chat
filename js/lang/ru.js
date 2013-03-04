@@ -60,7 +60,7 @@ var ajaxChatLang = {
 	userMenuIgnoreList: 'Список игнорируемых',
 	userMenuWhereis: 'В каком канале?',
 	userMenuKick: 'Выкинуть/Забанить',
-	userMenuPassword: 'Change password',
+	userMenuPassword: 'Сменить пароль',
 	userMenuBans: 'Список забаненных',
 	userMenuWhois: 'Показать IP',
 	unbanUser: 'Отменить бан пользователя %s',
