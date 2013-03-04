@@ -1320,7 +1320,7 @@ class AJAXChat {
 					'/error InvalidUserName'
 					);
 				} else {
-					else if($this->isUserNameInUse($newUserName)) {
+					if($this->isUserNameInUse($newUserName)) {
 						$this->insertChatBotMessage(
 						$this->getPrivateMessageID(),
 						'/error UserNameInUse'
