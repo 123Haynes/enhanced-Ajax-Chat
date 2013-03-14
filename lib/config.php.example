@@ -32,19 +32,18 @@ $config['dbConnection']['type'] = null;
 // Database link:
 $config['dbConnection']['link'] = null;
 
-// Where to store users and channels. 
-// database or file
+// Where to store users and channel's in "database" or "file".
 $config['authMethod'] = 'database';
 
 // Database table names:
 $config['dbTableNames'] = array();
-$config['dbTableNames']['online']		= 'ajax_chat_online';
-$config['dbTableNames']['messages']		= 'ajax_chat_messages';
-$config['dbTableNames']['bans']			= 'ajax_chat_bans';
-$config['dbTableNames']['invitations']	= 'ajax_chat_invitations';
-$config['dbTableNames']['channels']		= 'ajax_chat_channels';
+$config['dbTableNames']['bans']  			= 'ajax_chat_bans';
+$config['dbTableNames']['users']			= 'ajax_chat_users';
+$config['dbTableNames']['online']			= 'ajax_chat_online';
+$config['dbTableNames']['messages']			= 'ajax_chat_messages';
+$config['dbTableNames']['channels']			= 'ajax_chat_channels';
+$config['dbTableNames']['invitations']		= 'ajax_chat_invitations';
 $config['dbTableNames']['channelAccess']	= 'ajax_chat_channelAccess';
-$config['dbTableNames']['users']		= 'ajax_chat_users';
 
 // Available languages:
 $config['langAvailable'] = array('ar','bg','bp','ca','cz','de','el','en','es','fi','fr','he','hr','in','it','kr','ja','nl','no','pl','ro','ru','sk','sl','sr','sv','tr','uk','zh','zh-tw');
